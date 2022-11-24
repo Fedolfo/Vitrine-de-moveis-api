@@ -3,3 +3,4 @@ dist
 jest.config.ts
 jest-unit-config.ts
 coverage
+/data
