@@ -2,5 +2,6 @@ node_modules
 dist
 jest.config.ts
 jest-unit-config.ts
+jest-mongodb-config.ts
 coverage
 /data
