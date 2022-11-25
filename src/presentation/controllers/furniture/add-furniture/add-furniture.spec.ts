@@ -1,22 +1,20 @@
-import { FurnitureModel } from '@/domain/models/furniture'
+import { EnviromentsModel, FurnitureModel } from '@/domain/models/furniture'
 import { AddFurniture, AddFurnitureParams } from '@/domain/usecases/furniture/add-furniture'
 import { MissingParamError, ServerError } from '@/presentation/errors'
 import { badRequest, ok, serverError } from '@/presentation/helpers/http/http-helper'
 import { HttpRequest, Validation } from '@/presentation/protocols'
 import AddFurnitureController from './add-furniture-controller'
 
+const makeEnvironments = (): EnviromentsModel[] => {
+  return Object.values(EnviromentsModel)
+}
+
 const makeFakeFurniture = (): FurnitureModel => ({
   _id: 'valid_id',
   name: 'Balcão',
   imagem: 'any_imagem',
   price: '200,00',
-  environments: {
-    kitchen: 'any_value',
-    bathroom: 'any_value',
-    bedroom: 'any_value',
-    livingRoom: 'any_value',
-    office: 'any_value'
-  }
+  environments: makeEnvironments()
 })
 
 const makeFakeRequest = (): HttpRequest => ({
@@ -24,13 +22,7 @@ const makeFakeRequest = (): HttpRequest => ({
     name: 'Balcão',
     imagem: 'any_imagem',
     price: '200,00',
-    environments: {
-      kitchen: 'any_value',
-      bathroom: 'any_value',
-      bedroom: 'any_value',
-      livingRoom: 'any_value',
-      office: 'any_value'
-    }
+    environments: makeEnvironments()
   }
 })
 
@@ -99,13 +91,7 @@ describe('AddFurniture Controller', () => {
       name: 'Balcão',
       imagem: 'any_imagem',
       price: '200,00',
-      environments: {
-        kitchen: 'any_value',
-        bathroom: 'any_value',
-        bedroom: 'any_value',
-        livingRoom: 'any_value',
-        office: 'any_value'
-      }
+      environments: makeEnvironments()
     }))
   })
 
