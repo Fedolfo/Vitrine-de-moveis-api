@@ -6,7 +6,7 @@ import { MongoHelper } from '@/infra/helpers/mongo-helper'
 class FurnitureMongoRepository implements AddFurnitureRepository {
   async add (furniture: AddFurnitureParams): Promise<FurnitureModel> {
     const furnitureCollection = await MongoHelper.getCollection('furnitures')
-    const result = furnitureCollection.insertOne(furniture)
+    const result = await furnitureCollection.insertOne(furniture)
     return result as unknown as FurnitureModel
   }
 }
