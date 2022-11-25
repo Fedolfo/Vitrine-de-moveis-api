@@ -1,9 +1,9 @@
-export interface EnviromentsModel {
-  kitchen?: string
-  bedroom?: string
-  bathroom?: string
-  livingRoom?: string
-  office?: string
+export enum EnviromentsModel {
+  kitchen = 'kitchen',
+  bedroom = 'bedroom',
+  bathroom = 'bathroom',
+  livingRoom = 'livingRoom',
+  office = 'office',
 }
 
 export interface FurnitureModel {
@@ -11,5 +11,5 @@ export interface FurnitureModel {
   name: string
   imagem: string
   price: string
-  environments: EnviromentsModel
+  environments: EnviromentsModel[]
 }
