@@ -1,3 +1,4 @@
+import { EnviromentsModel } from '@/domain/models/furniture'
 import { MongoHelper } from '@/infra/helpers/mongo-helper'
 import { Collection } from 'mongodb'
 import FurnitureMongoRepository from './furniture-mongo-repository'
@@ -5,6 +6,10 @@ import FurnitureMongoRepository from './furniture-mongo-repository'
 let furnitureCollection: Collection
 
 describe('Furniture Mongo Repository', () => {
+  const makeEnvironments = (): EnviromentsModel[] => {
+    return Object.values(EnviromentsModel)
+  }
+
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL as string)
   })
@@ -29,13 +34,7 @@ describe('Furniture Mongo Repository', () => {
         name: 'Balcão',
         imagem: 'any_imagem',
         price: '200,00',
-        environments: {
-          kitchen: 'any_value',
-          bathroom: 'any_value',
-          bedroom: 'any_value',
-          livingRoom: 'any_value',
-          office: 'any_value'
-        }
+        environments: makeEnvironments()
       })
       expect(furniture).toBeTruthy()
     })
