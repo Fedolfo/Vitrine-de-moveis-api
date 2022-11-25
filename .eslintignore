@@ -1,6 +1,8 @@
 node_modules
 dist
 jest.config.ts
-jest-mongodb-config.ts
 jest-unit-config.ts
+jest-mongodb-config.ts
+jest-integration-config.ts
 coverage
+/data
