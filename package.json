@@ -7,6 +7,8 @@
     "start": "node dist/main/server.js",
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "dev": "rimraf dist && tsc-watch --onSuccess \"npm run start\"",
+    "dev:debug": "rimraf dist && tsc-watch --onSuccess \"npm run debug\" --onFailure \"echo Compilation error!\"",
+    "debug": "node --inspect=0.0.0.0:9222 dist/main/server.js",
     "prepare": "husky install",
     "test": "jest --passWithNoTests --silent --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
