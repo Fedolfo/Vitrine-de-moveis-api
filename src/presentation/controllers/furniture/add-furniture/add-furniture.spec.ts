@@ -11,11 +11,11 @@ const makeFakeFurniture = (): FurnitureModel => ({
   imagem: 'any_imagem',
   price: '200,00',
   environments: {
-    kitchen: true,
-    bathroom: true,
-    bedroom: true,
-    livingRoom: true,
-    office: true
+    kitchen: 'any_value',
+    bathroom: 'any_value',
+    bedroom: 'any_value',
+    livingRoom: 'any_value',
+    office: 'any_value'
   }
 })
 
@@ -25,11 +25,11 @@ const makeFakeRequest = (): HttpRequest => ({
     imagem: 'any_imagem',
     price: '200,00',
     environments: {
-      kitchen: true,
-      bathroom: true,
-      bedroom: true,
-      livingRoom: true,
-      office: true
+      kitchen: 'any_value',
+      bathroom: 'any_value',
+      bedroom: 'any_value',
+      livingRoom: 'any_value',
+      office: 'any_value'
     }
   }
 })
@@ -100,11 +100,11 @@ describe('AddFurniture Controller', () => {
       imagem: 'any_imagem',
       price: '200,00',
       environments: {
-        kitchen: true,
-        bathroom: true,
-        bedroom: true,
-        livingRoom: true,
-        office: true
+        kitchen: 'any_value',
+        bathroom: 'any_value',
+        bedroom: 'any_value',
+        livingRoom: 'any_value',
+        office: 'any_value'
       }
     }))
   })
