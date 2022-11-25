@@ -1,9 +1,9 @@
 export interface EnviromentsModel {
-  kitchen?: boolean
-  bedroom?: boolean
-  bathroom?: boolean
-  livingRoom?: boolean
-  office?: boolean
+  kitchen?: string
+  bedroom?: string
+  bathroom?: string
+  livingRoom?: string
+  office?: string
 }
 
 export interface FurnitureModel {
