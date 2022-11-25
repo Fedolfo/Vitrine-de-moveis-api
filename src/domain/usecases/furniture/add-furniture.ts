@@ -4,7 +4,7 @@ export interface AddFurnitureParams {
   name: string
   imagem: string
   price: string
-  environments: EnviromentsModel
+  environments: EnviromentsModel[]
 }
 
 export interface AddFurniture {
