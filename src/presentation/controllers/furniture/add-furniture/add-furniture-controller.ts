@@ -11,13 +11,7 @@ class AddFurnitureController implements Controller {
         name,
         imagem,
         price,
-        environments: {
-          kitchen,
-          bathroom,
-          bedroom,
-          livingRoom,
-          office
-        }
+        environments
       } = httpRequest.body
 
       const error = this.validation.validate(httpRequest.body)
@@ -30,13 +24,7 @@ class AddFurnitureController implements Controller {
         name,
         imagem,
         price,
-        environments: {
-          kitchen,
-          bathroom,
-          bedroom,
-          livingRoom,
-          office
-        }
+        environments
       })
       return ok(furniture)
     } catch (error: unknown) {
